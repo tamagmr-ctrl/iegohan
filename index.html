@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B1F3B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="おかず帖">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>おかず帖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF; --surface:#F5F6F8; --ink:#0B1F3B; --ink-soft:#5B6472; --line:#D9DDE3;
+    --card:#FFFFFF; --radius:4px; --accent:#A6413A; --accent2:#5C7A52;
+  }
+  :root[data-cuisine="jp"]{ --accent:#A6413A; --accent2:#5C7A52; }
+  :root[data-cuisine="it"]{ --accent:#2E7D32; --accent2:#C0392B; }
+  :root[data-cuisine="fr"]{ --accent:#7B1E3A; --accent2:#2E4374; }
+  :root[data-cuisine="es"]{ --accent:#C1440E; --accent2:#E8A33D; }
+  :root[data-cuisine="cn"]{ --accent:#9E1B1B; --accent2:#C9A227; }
+
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px); background:var(--bg);}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Noto Sans JP",-apple-system,sans-serif; line-height:1.65;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    min-height:100%;
+  }
+  .topbar{height:5px; background:var(--accent);}
+  h1,h2,h3{margin:0; font-weight:900;}
+  .wrap{max-width:900px; margin:0 auto; padding:24px 20px 60px;}
+  .eyebrow{font-size:.68rem; letter-spacing:.14em; color:var(--ink-soft); text-transform:uppercase; margin-bottom:4px; font-weight:700;}
+  header{
+    display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
+    border-bottom:2px solid var(--ink); padding-bottom:16px; margin-bottom:22px; flex-wrap:wrap;
+  }
+  header h1{font-size:1.6rem; letter-spacing:.02em;}
+  .actions{display:flex; gap:8px; flex-wrap:wrap;}
+  button{
+    font-family:inherit; font-size:.85rem; font-weight:700; border:1.5px solid var(--ink);
+    border-radius:var(--radius); padding:9px 16px; cursor:pointer; background:var(--bg); color:var(--ink);
+    transition:opacity .12s ease;
+  }
+  button:active{opacity:.7;}
+  .btn-primary{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .btn-ghost{background:var(--bg); color:var(--ink); border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--ink);}
+
+  .theme-picker{display:flex; align-items:center; gap:10px; margin:0 0 24px; padding:12px 14px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); flex-wrap:wrap;}
+  .tp-label{font-size:.68rem; letter-spacing:.1em; color:var(--ink-soft); text-transform:uppercase; font-weight:700; margin-right:4px;}
+  .tp-swatch{width:26px; height:26px; border-radius:50%; border:2px solid var(--bg); box-shadow:0 0 0 1.5px var(--line); cursor:pointer; padding:0;}
+  .tp-swatch.active{box-shadow:0 0 0 2px var(--ink);}
+  .tp-swatch[data-theme="jp"]{background:linear-gradient(135deg,#A6413A 50%,#5C7A52 50%);}
+  .tp-swatch[data-theme="it"]{background:linear-gradient(135deg,#2E7D32 50%,#C0392B 50%);}
+  .tp-swatch[data-theme="fr"]{background:linear-gradient(135deg,#7B1E3A 50%,#2E4374 50%);}
+  .tp-swatch[data-theme="es"]{background:linear-gradient(135deg,#C1440E 50%,#E8A33D 50%);}
+  .tp-swatch[data-theme="cn"]{background:linear-gradient(135deg,#9E1B1B 50%,#C9A227 50%);}
+
+  .empty{
+    text-align:center; padding:60px 20px; color:var(--ink-soft); border:1.5px dashed var(--line);
+    border-radius:var(--radius); font-size:.9rem; background:var(--surface);
+  }
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:16px;}
+  .card{
+    background:var(--card); border-radius:var(--radius); overflow:hidden; cursor:pointer;
+    border:1px solid var(--line); border-top:3px solid var(--accent); transition:box-shadow .15s ease;
+  }
+  .card:hover{box-shadow:0 4px 14px rgba(11,31,59,.12);}
+  .card .thumb{
+    width:100%; aspect-ratio:4/3; object-fit:cover; background:var(--surface);
+    display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:.78rem;
+  }
+  .card .body{padding:13px 15px;}
+  .card h3{font-size:1rem; margin-bottom:8px; font-weight:700;}
+  .card .meta{display:flex; align-items:center; gap:6px; flex-wrap:wrap;}
+  .badge{
+    font-size:.72rem; font-weight:700; padding:2px 9px; border-radius:3px; background:var(--surface); color:var(--ink-soft); border:1px solid var(--line);
+  }
+  .badge.cal{color:var(--accent); border-color:var(--accent);}
+  .card .note-preview{color:var(--ink-soft); font-size:.8rem; margin-top:8px;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
+
+  .overlay{
+    position:fixed; inset:0; background:rgba(11,31,59,.55); display:none;
+    align-items:flex-start; justify-content:center; padding:5vh 16px; z-index:20; overflow-y:auto;
+  }
+  .overlay.open{display:flex;}
+  .modal{
+    background:var(--card); border-radius:var(--radius); max-width:560px; width:100%;
+    padding:26px; margin-bottom:5vh; border-top:4px solid var(--accent);
+  }
+  .modal h2{font-size:1.25rem; margin-bottom:18px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); font-weight:700; margin-bottom:6px;}
+  .field input[type=text], .field input[type=number], .field textarea{
+    width:100%; font-family:inherit; font-size:.95rem; padding:10px 12px; border-radius:var(--radius);
+    border:1.5px solid var(--line); background:var(--bg); color:var(--ink); resize:vertical;
+  }
+  .field textarea{min-height:110px; line-height:1.6;}
+  .field input:focus, .field textarea:focus{outline:2px solid var(--accent); outline-offset:1px;}
+  .photo-row{display:flex; align-items:center; gap:14px;}
+  .photo-preview{
+    width:92px; height:92px; border-radius:var(--radius); object-fit:cover; background:var(--surface);
+    border:1px solid var(--line); flex-shrink:0;
+  }
+  .modal-actions{display:flex; justify-content:space-between; margin-top:22px; gap:10px; flex-wrap:wrap;}
+  .modal-actions .right{display:flex; gap:10px;}
+  .view-photo{width:100%; border-radius:var(--radius); margin-bottom:16px; max-height:280px; object-fit:cover;}
+  .view-note{white-space:pre-wrap; background:var(--surface); padding:14px 16px; border-radius:var(--radius); font-size:.9rem; border:1px solid var(--line);}
+  .icon-btn{background:none; border:none; color:var(--ink-soft); font-size:.82rem; text-decoration:underline; padding:4px;}
+
+  @media (max-width:600px){
+    .wrap{padding:16px 14px 48px;}
+    header{flex-direction:column; align-items:flex-start; gap:10px; margin-bottom:18px;}
+    header h1{font-size:1.4rem;}
+    .actions{width:100%;}
+    .actions button{flex:1;}
+    .grid{grid-template-columns:1fr 1fr; gap:10px;}
+    .card .body{padding:10px 11px;}
+    .card h3{font-size:.92rem;}
+    .overlay{padding:0; align-items:stretch;}
+    .modal{max-width:none; width:100%; min-height:100%; border-radius:0; margin-bottom:0; padding:20px 16px calc(20px + env(safe-area-inset-bottom,0px));}
+    .photo-row{flex-wrap:wrap;}
+    .modal-actions{flex-direction:column-reverse; align-items:stretch;}
+    .modal-actions .right{flex-direction:column-reverse;}
+    .modal-actions button{width:100%;}
+  }
+  @media (max-width:380px){
+    .grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Recipe Archive</div>
+      <h1>おかず帖</h1>
+    </div>
+    <div class="actions">
+      <button class="btn-ghost" id="exportBtn">CSVで書き出す</button>
+      <button class="btn-primary" id="addBtn">＋ メニューを追加</button>
+    </div>
+  </header>
+
+  <div class="theme-picker" id="themePicker">
+    <span class="tp-label">Color</span>
+    <button class="tp-swatch" data-theme="jp" title="日本風" aria-label="日本風"></button>
+    <button class="tp-swatch" data-theme="it" title="イタリア風" aria-label="イタリア風"></button>
+    <button class="tp-swatch" data-theme="fr" title="フランス風" aria-label="フランス風"></button>
+    <button class="tp-swatch" data-theme="es" title="スペイン風" aria-label="スペイン風"></button>
+    <button class="tp-swatch" data-theme="cn" title="中華風" aria-label="中華風"></button>
+  </div>
+
+  <div id="listArea"></div>
+</div>
+
+<div class="overlay" id="formOverlay">
+  <div class="modal">
+    <h2 id="formTitle">メニューを追加</h2>
+    <div class="field">
+      <label for="f-name">メニュー名</label>
+      <input type="text" id="f-name" placeholder="例：豚の生姜焼き">
+    </div>
+    <div class="field">
+      <label for="f-cal">カロリー（kcal・任意）</label>
+      <input type="number" id="f-cal" min="0" placeholder="例：520">
+    </div>
+    <div class="field">
+      <label>写真</label>
+      <div class="photo-row">
+        <img id="f-photo-preview" class="photo-preview" src="" style="display:none;">
+        <div>
+          <input type="file" id="f-photo" accept="image/*">
+          <div><button type="button" class="icon-btn" id="f-photo-clear" style="display:none;">写真を削除</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label for="f-note">作り方メモ</label>
+      <textarea id="f-note" placeholder="材料や手順、コツなどを自由に書いてください"></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-ghost" id="deleteBtn" style="display:none; color:var(--accent); border-color:var(--accent);">このメニューを削除</button>
+      <div class="right">
+        <button class="btn-ghost" id="cancelBtn">キャンセル</button>
+        <button class="btn-primary" id="saveBtn">保存</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="viewOverlay">
+  <div class="modal">
+    <img id="v-photo" class="view-photo" style="display:none;">
+    <h2 id="v-name"></h2>
+    <div class="meta" style="margin:10px 0 16px;">
+      <span class="badge cal" id="v-cal" style="display:none;"></span>
+    </div>
+    <div class="view-note" id="v-note"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" id="v-closeBtn">閉じる</button>
+      <button class="btn-primary" id="v-editBtn">編集する</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const STORAGE_KEY = 'okazu-note-recipes';
+let recipes = [];
+let editingId = null;
+let currentPhotoData = null;
+
+function load(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    recipes = raw ? JSON.parse(raw) : [];
+  }catch(e){ recipes = []; }
+}
+function save(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(recipes)); }
+  catch(e){ alert('保存に失敗しました。写真のサイズが大きすぎる可能性があります。'); }
+}
+
+function render(){
+  const area = document.getElementById('listArea');
+  if(recipes.length === 0){
+    area.innerHTML = '<div class="empty">まだメニューが登録されていません。<br>「＋ メニューを追加」から、最初の一品を記録しましょう。</div>';
+    return;
+  }
+  const sorted = [...recipes].sort((a,b)=> b.createdAt - a.createdAt);
+  area.innerHTML = '<div class="grid">' + sorted.map(r => `
+    <div class="card" data-id="${r.id}">
+      ${r.photo ? `<img class="thumb" src="${r.photo}">` : `<div class="thumb">写真なし</div>`}
+      <div class="body">
+        <h3>${escapeHtml(r.name)}</h3>
+        <div class="meta">
+          ${r.calories ? `<span class="badge cal">${r.calories} kcal</span>` : ''}
+        </div>
+        ${r.note ? `<div class="note-preview">${escapeHtml(r.note)}</div>` : ''}
+      </div>
+    </div>
+  `).join('') + '</div>';
+
+  area.querySelectorAll('.card').forEach(card=>{
+    card.addEventListener('click', ()=> openView(card.dataset.id));
+  });
+}
+
+function escapeHtml(s){
+  return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function openForm(id){
+  editingId = id || null;
+  const r = id ? recipes.find(x=>x.id===id) : null;
+  document.getElementById('formTitle').textContent = r ? 'メニューを編集' : 'メニューを追加';
+  document.getElementById('f-name').value = r ? r.name : '';
+  document.getElementById('f-cal').value = r && r.calories ? r.calories : '';
+  document.getElementById('f-note').value = r ? r.note : '';
+  currentPhotoData = r ? r.photo : null;
+  const preview = document.getElementById('f-photo-preview');
+  const clearBtn = document.getElementById('f-photo-clear');
+  if(currentPhotoData){ preview.src = currentPhotoData; preview.style.display='block'; clearBtn.style.display='inline'; }
+  else { preview.style.display='none'; clearBtn.style.display='none'; }
+  document.getElementById('f-photo').value = '';
+  document.getElementById('deleteBtn').style.display = r ? 'inline-block' : 'none';
+  document.getElementById('formOverlay').classList.add('open');
+}
+function closeForm(){ document.getElementById('formOverlay').classList.remove('open'); }
+
+function openView(id){
+  const r = recipes.find(x=>x.id===id);
+  if(!r) return;
+  document.getElementById('v-name').textContent = r.name;
+  const photo = document.getElementById('v-photo');
+  if(r.photo){ photo.src = r.photo; photo.style.display='block'; } else { photo.style.display='none'; }
+  const cal = document.getElementById('v-cal');
+  if(r.calories){ cal.textContent = r.calories + ' kcal'; cal.style.display='inline-block'; } else { cal.style.display='none'; }
+  document.getElementById('v-note').textContent = r.note || '（メモはまだありません）';
+  document.getElementById('viewOverlay').classList.add('open');
+  document.getElementById('v-editBtn').onclick = ()=>{ closeView(); openForm(id); };
+}
+function closeView(){ document.getElementById('viewOverlay').classList.remove('open'); }
+
+document.getElementById('addBtn').addEventListener('click', ()=> openForm(null));
+document.getElementById('cancelBtn').addEventListener('click', closeForm);
+document.getElementById('v-closeBtn').addEventListener('click', closeView);
+document.getElementById('formOverlay').addEventListener('click', e=>{ if(e.target.id==='formOverlay') closeForm(); });
+document.getElementById('viewOverlay').addEventListener('click', e=>{ if(e.target.id==='viewOverlay') closeView(); });
+
+document.getElementById('f-photo').addEventListener('change', e=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const img = new Image();
+  const reader = new FileReader();
+  reader.onload = ev => {
+    img.onload = () => {
+      const maxW = 800;
+      const scale = Math.min(1, maxW / img.width);
+      const canvas = document.createElement('canvas');
+      canvas.width = img.width * scale;
+      canvas.height = img.height * scale;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      currentPhotoData = canvas.toDataURL('image/jpeg', 0.75);
+      const preview = document.getElementById('f-photo-preview');
+      preview.src = currentPhotoData; preview.style.display='block';
+      document.getElementById('f-photo-clear').style.display='inline';
+    };
+    img.src = ev.target.result;
+  };
+  reader.readAsDataURL(file);
+});
+document.getElementById('f-photo-clear').addEventListener('click', ()=>{
+  currentPhotoData = null;
+  document.getElementById('f-photo-preview').style.display='none';
+  document.getElementById('f-photo-clear').style.display='none';
+  document.getElementById('f-photo').value = '';
+});
+
+document.getElementById('saveBtn').addEventListener('click', ()=>{
+  const name = document.getElementById('f-name').value.trim();
+  if(!name){ alert('メニュー名を入力してください。'); return; }
+  const calVal = document.getElementById('f-cal').value;
+  const note = document.getElementById('f-note').value;
+  if(editingId){
+    const r = recipes.find(x=>x.id===editingId);
+    r.name = name; r.calories = calVal ? Number(calVal) : null; r.note = note; r.photo = currentPhotoData;
+  }else{
+    recipes.push({
+      id: 'r_' + Date.now() + '_' + Math.random().toString(36).slice(2,7),
+      name, calories: calVal ? Number(calVal) : null, note, photo: currentPhotoData,
+      createdAt: Date.now()
+    });
+  }
+  save(); render(); closeForm();
+});
+
+document.getElementById('deleteBtn').addEventListener('click', ()=>{
+  if(!editingId) return;
+  if(!confirm('このメニューを削除しますか？')) return;
+  recipes = recipes.filter(x=>x.id!==editingId);
+  save(); render(); closeForm();
+});
+
+function toCsv(){
+  const header = ['メニュー名','カロリー(kcal)','作り方メモ'];
+  const rows = recipes.map(r => [r.name, r.calories ?? '', (r.note||'').replace(/"/g,'""')]);
+  const esc = v => `"${String(v).replace(/"/g,'""')}"`;
+  return '\uFEFF' + [header, ...rows].map(row => row.map(esc).join(',')).join('\r\n');
+}
+
+document.getElementById('exportBtn').addEventListener('click', async ()=>{
+  if(recipes.length === 0){ alert('書き出せるメニューがまだありません。'); return; }
+  const csv = toCsv();
+  try{
+    const downloads = await claude.use('downloads');
+    if(downloads){
+      await downloads.save({ filename: 'okazu-note.csv', data: csv });
+      return;
+    }
+  }catch(e){}
+  const blob = new Blob([csv], {type:'text/csv'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'okazu-note.csv';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
+
+const THEME_KEY = 'okazu-note-theme';
+function applyTheme(key){
+  document.documentElement.setAttribute('data-cuisine', key);
+  document.querySelectorAll('.tp-swatch').forEach(b => b.classList.toggle('active', b.dataset.theme === key));
+  try{ localStorage.setItem(THEME_KEY, key); }catch(e){}
+}
+document.querySelectorAll('.tp-swatch').forEach(b=>{
+  b.addEventListener('click', ()=> applyTheme(b.dataset.theme));
+});
+applyTheme(localStorage.getItem(THEME_KEY) || 'jp');
+
+load();
+render();
+</script>
+</body>
+</html>
